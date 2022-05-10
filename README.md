@@ -2,10 +2,6 @@
 
 ## Usage
 
-The pipeline is built around the same sample-sheet that was used by the old fusion and variant
-calling pipelines. Some of the columns are redundant, however I've left it all the same for
-compatibility reasons.
-
 ### 1. Create a Sample-sheet
 
 The sample-sheet is a _CSV_ file of the following structure:
