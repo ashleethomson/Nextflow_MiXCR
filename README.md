@@ -1,37 +1,4 @@
-# New ALL Fusion-Calling Pipeline
-
-This is an updated version of the previous ALL [Fusion calling pipeline][fusion]. It uses new
-fusion calling software, whilst also using a newer version of `Nextflow` (DSL2).
-
-## Installation
-
-Clone the repository to your system:
-
-```bash
-$ git clone --recurse-submodules https://github.com/sagc-bioinformatics/nf-gene-fusion-ALL-SAGC.git
-```
-
-Check out the help page by running the following command:
-
-```bash
-$ nextflow run main.nf --help
-
-==============================================================
-	   ALL GENE-FUSION NEXTFLOW PIPELINE 0.0.1
-==============================================================
-
-
-Nextflow Arguments:
-	-profile <str>			Which Nextflow profile to use: Should ALWAYS be 'conda,slurm'
-	-N <str>			SAGC email that a notification of completion will be sent to
-
-Mandatory Arguments:
-	--outdir <str>			Path to output directory
-	--samplesheet <str>		Path to sample sheet
-	--email <str>			Your email
-	--partition <str>		Which HPC partition to use ('sahmri_prod_hpc' or
-					'sahmri_cancer_hpc')
-```
+# MiXCR Pipeline
 
 ## Usage
 
@@ -79,4 +46,4 @@ nextflow run \
     --partition sahmri_prod_hpc
 ```
 
-[fusion]: https://github.com/sagc-bioinformatics/nf-gene-fusion-ALL
+
