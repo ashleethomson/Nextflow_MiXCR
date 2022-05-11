@@ -1,5 +1,10 @@
 # MiXCR Pipeline
 
+MiXCR: a universal tool for fast and accurate analysis of T- and B- cell receptor repertoire sequencing data
+
+https://github.com/milaboratory/mixcr/
+https://mixcr.readthedocs.io/en/master/index.html
+
 ## Usage
 
 ### 1. Create a Sample-sheet
