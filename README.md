@@ -37,7 +37,7 @@ nextflow run \
     -profile slurm,conda \
     -N email@gmail.com \
     --outdir ./outdir \
-    --samplesheet <path>/test.csv \
+    --samplesheet <path>/<samplesheet>.csv \
     --email email@gmail.com \
     --partition sahmri_prod_hpc
 ```
