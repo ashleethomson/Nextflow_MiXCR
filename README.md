@@ -1,5 +1,11 @@
 # MiXCR Pipeline
 
+MiXCR: a universal tool for fast and accurate analysis of T- and B- cell receptor repertoire sequencing data
+
+https://github.com/milaboratory/mixcr/
+
+https://mixcr.readthedocs.io/en/master/index.html
+
 ## Usage
 
 ### 1. Create a Sample-sheet
@@ -37,7 +43,7 @@ nextflow run \
     -profile slurm,conda \
     -N email@gmail.com \
     --outdir ./outdir \
-    --samplesheet <path>/test.csv \
+    --samplesheet <path>/<samplesheet>.csv \
     --email email@gmail.com \
     --partition sahmri_prod_hpc
 ```
