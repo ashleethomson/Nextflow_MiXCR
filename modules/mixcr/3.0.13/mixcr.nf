@@ -9,29 +9,28 @@ process mixcr {
     val outdir
      
     output:
-    file "${filename}_analysis.clna"
-	file "${filename}_analysis.clonotypes.ALL.txt"
-	file "${filename}_analysis.clonotypes.IGH.txt"
-	file "${filename}_analysis.clonotypes.IGK.txt"
-	file "${filename}_analysis.clonotypes.IGL.txt"
-	file "${filename}_analysis.clonotypes.TRA.txt"
-	file "${filename}_analysis.clonotypes.TRB.txt"
-	file "${filename}_analysis.clonotypes.TRD.txt"
-	file "${filename}_analysis.clonotypes.TRG.txt"
-	file "${filename}_analysis.extended.vdjca"
-	file "${filename}_analysis.report"
-	file "${filename}_analysis.rescued_0.vdjca"
-	file "${filename}_analysis.rescued_1.vdjca"
-	file "${filename}_analysis.vdjca"
+	file "${filename}.analysis.clna"
+	file "${filename}.analysis.clonotypes.ALL.txt"
+	file "${filename}.analysis.clonotypes.IGH.txt"
+	file "${filename}.analysis.clonotypes.IGK.txt"
+	file "${filename}.analysis.clonotypes.IGL.txt"
+	file "${filename}.analysis.clonotypes.TRA.txt"
+	file "${filename}.analysis.clonotypes.TRB.txt"
+	file "${filename}.analysis.clonotypes.TRD.txt"
+	file "${filename}.analysis.clonotypes.TRG.txt"
+	file "${filename}.analysis.extended.vdjca"
+	file "${filename}.analysis.report"
+	file "${filename}.analysis.rescued_0.vdjca"
+	file "${filename}.analysis.rescued_1.vdjca"
+	file "${filename}.analysis.vdjca"
 
     script:
     """
-    	mixcr analyze shotgun \
-        	--species hs \
-        	--starting-material rna \
-        	--only-productive \
-        	${reads[0]} ${reads[1]} \
-        	--report /${PWD}/${filename}
+	mixcr analyze shotgun \
+		--species hs \
+		--starting-material rna \
+		--only-productive \
+		${reads[0]} ${reads[1]} ${filename}.analysis
     """
 }
 
