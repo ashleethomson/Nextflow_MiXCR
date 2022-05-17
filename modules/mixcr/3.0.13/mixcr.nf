@@ -19,7 +19,7 @@ process mixcr {
 		--only-productive \
 		${reads[0]} ${reads[1]} ${filename}.analysis
 		
-	awk '{if ($2>=10.0) print ($2,$6,$7,$8,$9)}' ${filename}.analysis.clonotypes.ALL.txt > ${filename}.filtered.clonotypes.ALL.txt
+	awk -F "\t" '{ if ($2>=10.0) print ($2"\t"$6"\t"$7"\t"$8"\t"$9) }' ${filename}.analysis.clonotypes.ALL.txt > ${filename}.filtered.clonotypes.ALL.txt
     """
 }
 
