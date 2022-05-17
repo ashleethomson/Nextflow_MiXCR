@@ -9,20 +9,7 @@ process mixcr {
     val outdir
      
     output:
-	file "${filename}.analysis.clna"
-	file "${filename}.analysis.clonotypes.ALL.txt"
-	file "${filename}.analysis.clonotypes.IGH.txt"
-	file "${filename}.analysis.clonotypes.IGK.txt"
-	file "${filename}.analysis.clonotypes.IGL.txt"
-	file "${filename}.analysis.clonotypes.TRA.txt"
-	file "${filename}.analysis.clonotypes.TRB.txt"
-	file "${filename}.analysis.clonotypes.TRD.txt"
-	file "${filename}.analysis.clonotypes.TRG.txt"
-	file "${filename}.analysis.extended.vdjca"
-	file "${filename}.analysis.report"
-	file "${filename}.analysis.rescued_0.vdjca"
-	file "${filename}.analysis.rescued_1.vdjca"
-	file "${filename}.analysis.vdjca"
+	${filename}.filtered.clonotypes.ALL.txt
 
     script:
     """
@@ -31,6 +18,8 @@ process mixcr {
 		--starting-material rna \
 		--only-productive \
 		${reads[0]} ${reads[1]} ${filename}.analysis
+		
+	awk '{if ($2>=10.0) print ($2,$6,$7,$8,$9)}' ${filename}.analysis.clonotypes.ALL.txt > ${filename}.filtered.clonotypes.ALL.txt
     """
 }
 
