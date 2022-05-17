@@ -10,6 +10,7 @@ process mixcr {
      
     output:
 	file "${filename}.filtered.clonotypes.ALL.txt"
+	file "${filename}.analysis.clonotypes.ALL.txt"
 
 
     script:
