@@ -9,7 +9,7 @@ process mixcr {
     val outdir
      
     output:
-	file "${filename}.txt"
+	file "${filename}.analysis.clonotypes.ALL.txt"
 
 
     script:
@@ -19,8 +19,6 @@ process mixcr {
 		--starting-material rna \
 		--only-productive \
 		${reads[0]} ${reads[1]} ${filename}.analysis
-
-	cp ${filename}.analysis.clonotypes.ALL.txt ${filename}.txt
     """
 }
 
